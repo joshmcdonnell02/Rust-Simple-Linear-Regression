@@ -1,7 +1,6 @@
 use std::error::Error;
 use std::io;
-use std::env;
-use std::iter::FromIterator;
+//use std::env;
 use serde::Deserialize;
 use num::pow;
 

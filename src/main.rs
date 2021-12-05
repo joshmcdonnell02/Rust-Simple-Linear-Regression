@@ -1,13 +1,11 @@
 use std::iter::FromIterator;
-
-use ml::LinearRegression;
+use ml;
 
 // y = ax + b
 // NYA,2014-10-27,10547.66016,10559.75977,10483.75977,10544.41992,10544.41992,3538860000
 // 10544.41992 = a(10547.66016) + b
 // a = coefficient
 // b = Intercept
-
 
 fn main() {
 
@@ -18,11 +16,11 @@ fn main() {
 
     let data = ml::read_data().unwrap();
 
-    let x_train = Vec::from_iter(data[0][0..1000].iter().cloned());
-    let y_train = Vec::from_iter(data[1][0..1000].iter().cloned());
+    let x_train = Vec::from_iter(data[0][0..3000].iter().cloned());
+    let y_train = Vec::from_iter(data[1][0..3000].iter().cloned());
 
-    let x_test = Vec::from_iter(data[0][1000..1300].iter().cloned());
-    let y_test = Vec::from_iter(data[1][1000..1300].iter().cloned());
+    let x_test = Vec::from_iter(data[0][3000..4300].iter().cloned());
+    let y_test = Vec::from_iter(data[1][3000..4300].iter().cloned());
 
     linear_model.fit(&x_train, &y_train);
 
